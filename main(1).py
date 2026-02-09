@@ -64,12 +64,40 @@ def testerInsertionAnimal(listeAni : List[Animal], pos: int, unAni: Animal)-> bo
     #TODO : à implémenter
     pass
 
+def testerInsertionAnimal(listeAni : List[Animal], pos: int, unAni: Animal)-> bool:
+    """Permet de vérifier la position pour l'insertion dans une liste
+    :param listeAni: liste des animaux ordonnées selon la taille
+    :param pos: place proposée pour insérer
+    :param unAni: animal
+    :return:
+        Renvoie True si place est la bonne position pour insérer unAni dans la
+        liste en respectant le critère de taille. False sinon.
+    """
+
+
+def comparer(ani: Animal, autreAni: Animal) -> bool:
+    """Compare ani et autreAni selon la taille.
+    :param ani : animal à comparer au second
+    :param autreAni : animal à comparer
+    :return : Renvoie True si la taille d'ani est plus petite ou égale à celle d'autreAni. False sinon
+    """
+
+def comparer(self, other: Animal) -> bool:
+    """ Permet de comparer l'instance courante de classe avec un de ses semblables
+        :param other: l'autre animal objet de la comparaison
+        :return: True si l'instance courante est plus petite de par la taille que l'instance other. False sinon
+        """
+
+
 # ----------------------------------------------------------------------------------------------------------------#
 # PROGRAMME PRINCIPAL --------------------------------------------------------------------------------------------#
 # ----------------------------------------------------------------------------------------------------------------#
 
 
-
+ani1 = Animal("Elephant d'Asie", "Elephas maximus", 50)
+ani2 = Animal("Le lémurien", "Lemur catta", 48 )
+ani3 = Animal("Le lapin de garenne", "Oryctolagus cuniculus", 10)
+ani4 = Animal("La gazelle", "Gazella gazella", 28 )
 
 # création des cartes
 listeAnimaux = []
@@ -107,3 +135,4 @@ while choix != 9:
         print("DEBUG - Ajout d'un nouvel animal à implémenter")
 
     choix = menu()
+
