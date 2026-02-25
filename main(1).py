@@ -20,14 +20,6 @@ def choisirPlace(numMax : int) -> int:
     # TODO : à implémenter
     pass
 
-def comparer(ani: Animal, autreAni: Animal) -> bool:
-    """Compare ani et autreAni selon la taille.
-    :param ani : animal à comparer au second
-    :param autreAni : animal à comparer
-    :return : Renvoie True si la taille d'ani est plus petite ou égale à celle d'autreAni. False sinon
-    """
-    #TODO : à implémenter
-    pass
 
 def jouerNouvelleCarte() -> str:
     """Permet de proposer de jouer une nouvelle carte O/N
@@ -54,17 +46,14 @@ def menu():
     return choix
 
 def testerInsertionAnimal(listeAni : List[Animal], pos: int, unAni: Animal)-> bool:
-    """Permet de vérifier la position pour l'insertion dans une liste
-    :param listeAni: liste des animaux ordonnées selon la taille
-    :param pos: place proposée pour insérer
-    :param unAni: animal
-    :return:
-        Renvoie True si place est la bonne position pour insérer unAni dans la liste en respectant le critère de taille. False sinon.
-    """
-    #TODO : à implémenter
-    pass
-
-def testerInsertionAnimal(listeAni : List[Animal], pos: int, unAni: Animal)-> bool:
+    aniprec = None
+    anisuiv = None
+    if pos > 1:
+        aniprec = listeAni[pos - 1]
+    if ani.comparer(autreAni) == False:
+        return False
+    else:
+        return True
     """Permet de vérifier la position pour l'insertion dans une liste
     :param listeAni: liste des animaux ordonnées selon la taille
     :param pos: place proposée pour insérer
@@ -76,17 +65,13 @@ def testerInsertionAnimal(listeAni : List[Animal], pos: int, unAni: Animal)-> bo
 
 
 def comparer(ani: Animal, autreAni: Animal) -> bool:
+    return ani.comparer(autreAni)
     """Compare ani et autreAni selon la taille.
     :param ani : animal à comparer au second
     :param autreAni : animal à comparer
     :return : Renvoie True si la taille d'ani est plus petite ou égale à celle d'autreAni. False sinon
     """
 
-def comparer(self, other: Animal) -> bool:
-    """ Permet de comparer l'instance courante de classe avec un de ses semblables
-        :param other: l'autre animal objet de la comparaison
-        :return: True si l'instance courante est plus petite de par la taille que l'instance other. False sinon
-        """
 
 
 # ----------------------------------------------------------------------------------------------------------------#
@@ -98,6 +83,12 @@ ani1 = Animal("Elephant d'Asie", "Elephas maximus", 50)
 ani2 = Animal("Le lémurien", "Lemur catta", 48 )
 ani3 = Animal("Le lapin de garenne", "Oryctolagus cuniculus", 10)
 ani4 = Animal("La gazelle", "Gazella gazella", 28 )
+
+listeAnimaux.append(ani1)
+listeAnimaux.append(ani2)
+listeAnimaux.append(ani3)
+listeAnimaux.append(ani4)
+
 
 # création des cartes
 listeAnimaux = []
@@ -112,6 +103,8 @@ while choix != 9:
     if choix == 1:
         print("DEBUG - Affichage de la liste des cartes à implémenter")
         #TODO ETAPE 1 : affichage de la liste des cartes
+        for animal in listeAnimaux:
+            print(animal)
 
     elif choix == 2:
         print("DEBUG - Tour de jeu : placement d'une carte à implémenter")
@@ -130,9 +123,14 @@ while choix != 9:
 
     elif choix == 3 :
         #TODO ETAPE 1 : ajout d'un animal à implémenter
-        Animal(nom, nomscientif, taille)
-        print(f"Le nom de l'animal est {self.nom}")
-        print("DEBUG - Ajout d'un nouvel animal à implémenter")
+        nom = input("Nom Animal")
+        nomscientif = input("Nom scientifique")
+        taille = input("Taille animal")
+        nouvanimal = Animal(nom, nomscientif, taille)
+        listeAnimaux.append(nouvanimal)
+        print("animal implémenter")
 
     choix = menu()
+
+
 
